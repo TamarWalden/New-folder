@@ -1,0 +1,26 @@
+<div class="collection-page">
+  <h1>סריקת אוסף</h1>
+  <br>
+  <mat-label >מספר אוסף<span style="color: red">*</span></mat-label>
+  <br>
+  <div class="input-collection">
+    <input matInput placeholder="הכנס מספר אוסף" type="number" pattern="[0-9]*" [(ngModel)]="collectionNumber">
+    <button mat-raised-button color="primary" [disabled]="!collectionNumber" (click)="getCollection(collectionNumber)"
+      class="next-button">הבא</button>
+  </div>
+  <br>
+  <div *ngIf="collection">
+      <mat-label>שם האוסף</mat-label>
+      <br>
+      <textarea matInput [(ngModel)]="collection.title" readonly></textarea>
+      <br>  <br>
+    <div *ngFor="let image of collection.images">
+      <app-image-card [image]="image" [lastImage]="collection.images.length==image.id"
+        (deleteLastImage)="deleteLastImage()"></app-image-card>
+    </div>
+
+  </div>
+  <button mat-raised-button color="primary" [disabled]="!isGetCollection" (click)="addImageCard()">Attach another
+    image</button>
+  <button mat-raised-button color="primary" [disabled]="!isGetCollection" (click)="saveImages()">save images</button>
+</div>

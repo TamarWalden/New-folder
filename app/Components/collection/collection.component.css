@@ -1,0 +1,56 @@
+.collection-page{
+    background-color: rgb(253, 253, 253);
+    width: 100vb;
+    border-radius: 1vb;
+    padding: 10vb;
+    padding-right: 15vb;
+    padding-left: 15vb;
+    margin: 20vb;
+}
+
+h1 {
+    text-align: center;
+    color: rgb(14, 14, 90);
+    font-weight:bolder;
+    font-size: xx-large;
+  }
+
+  input {
+    background-color: rgb(173, 202, 237);
+    height: 4vh;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid lightblue;
+    font-size: 1.2vw
+  }
+  
+  input:focus {
+    border-bottom: 2px solid lightblue;
+  }
+
+  button {
+    flex: 0;
+ }
+  
+  mat-label {
+    font-size: 1.2vw;
+  }
+  .next-button{
+    border-radius: 0%;
+    height: 4.5vh;
+  }
+  .input-collection{
+    display: flex;
+    align-items: center;
+  }
+
+  textarea{
+    background-color: rgb(196, 198, 200);
+    height: 4vh;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid rgb(14, 14, 90);
+    ;
+    font-size: 1.2vw
+  }

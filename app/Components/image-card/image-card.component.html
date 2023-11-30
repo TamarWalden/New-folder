@@ -1,0 +1,24 @@
+<div class="frame">
+    <mat-icon *ngIf="lastImage" (click)="deleteImage()" class="delete-icon">delete</mat-icon>
+
+    <div class="status-dot" [ngClass]="{'red': !image?.isSaved, 'green': image?.isSaved}"></div>
+    <span *ngIf="image?.isSaved" class="status-dot-text">  נשמר בהצלחה</span>
+
+    <br>
+    <div class="image-details">
+        <mat-label>מספר התמונה</mat-label> <br>
+        <textarea matInput [value]="image?.id?.toString()" readonly></textarea>
+        <br>
+        <mat-label>נתיב שמירת התמונה</mat-label> <br>
+        <textarea matInput [value]="image?.path" readonly></textarea>
+        <br>
+        <ng-container *ngIf="(image?.isSaved && image?.path_xx) || isChecked">
+            <mat-label>נתיב שמירת גב תמונה</mat-label> <br>
+            <textarea matInput [value]="image?.path_xx" readonly></textarea>
+        </ng-container>
+        <br>
+        <ng-container *ngIf="!image?.isSaved">
+            <mat-checkbox (change)="onCheckboxChange($event)">back image</mat-checkbox>
+        </ng-container>
+    </div>
+</div>
